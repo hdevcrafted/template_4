@@ -1,268 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses - Crafters</title>
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses - Crafters</title>
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <!-- Sidebar Navigation -->
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <h1 class="logo">
-                <i class="fas fa-hammer"></i>
-                <span>Crafters</span>
-            </h1>
-            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
-                <i class="fas fa-bars"></i>
-            </button>
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h1 class="logo">
+        <i class="fas fa-hammer"></i>
+        <span>Crafters</span>
+      </h1>
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="profile.html" class="nav-link">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="projects.html" class="nav-link">
+            <i class="fas fa-project-diagram"></i>
+            <span>Projects</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="friends.html" class="nav-link">
+            <i class="fas fa-users"></i>
+            <span>Friends</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="courses.html" class="nav-link active">
+            <i class="fas fa-book"></i>
+            <span>Courses</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="files.html" class="nav-link">
+            <i class="fas fa-file"></i>
+            <span>Files</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="plans.html" class="nav-link">
+            <i class="fas fa-crown"></i>
+            <span>Plans</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="settings.html" class="nav-link">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <p class="tagline">Craft Your Excellence</p>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Header -->
+    <header class="page-header">
+      <div class="header-content">
+        <h2 class="page-title">Courses</h2>
+        <p class="page-subtitle">Advance your skills with our curated learning paths</p>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-secondary">
+          <i class="fas fa-bell"></i>
+          <span class="notification-badge">3</span>
+        </button>
+        <button class="btn btn-secondary">
+          <i class="fas fa-user-circle"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <section class="content-area">
+      <!-- Active Courses -->
+      <h3 class="mb-4" style="color: var(--color-accent);">In Progress</h3>
+      <div class="grid grid-3 mb-4">
+        <div class="course-card">
+          <div class="course-image">
+            <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=web-development"
+              alt="Advanced React Patterns">
+            <div class="course-overlay">
+              <button class="btn btn-primary btn-sm">Continue</button>
+            </div>
+          </div>
+          <div class="course-content">
+            <h3>Advanced React Patterns</h3>
+            <p class="text-tertiary text-sm">By Tech Academy</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 65%"></div>
+            </div>
+            <p class="text-tertiary text-sm mt-2">65% Complete</p>
+          </div>
         </div>
 
-        <nav class="sidebar-nav">
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">
-                        <i class="fas fa-home"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="profile.html" class="nav-link">
-                        <i class="fas fa-user"></i>
-                        <span>Profile</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="projects.html" class="nav-link">
-                        <i class="fas fa-project-diagram"></i>
-                        <span>Projects</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="friends.html" class="nav-link">
-                        <i class="fas fa-users"></i>
-                        <span>Friends</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="courses.html" class="nav-link active">
-                        <i class="fas fa-book"></i>
-                        <span>Courses</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="files.html" class="nav-link">
-                        <i class="fas fa-file"></i>
-                        <span>Files</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="plans.html" class="nav-link">
-                        <i class="fas fa-crown"></i>
-                        <span>Plans</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="settings.html" class="nav-link">
-                        <i class="fas fa-cog"></i>
-                        <span>Settings</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="sidebar-footer">
-            <p class="tagline">Craft Your Excellence</p>
+        <div class="course-card">
+          <div class="course-image">
+            <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=design" alt="UI/UX Design Fundamentals">
+            <div class="course-overlay">
+              <button class="btn btn-primary btn-sm">Continue</button>
+            </div>
+          </div>
+          <div class="course-content">
+            <h3>UI/UX Design Fundamentals</h3>
+            <p class="text-tertiary text-sm">By Design Co</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 42%"></div>
+            </div>
+            <p class="text-tertiary text-sm mt-2">42% Complete</p>
+          </div>
         </div>
-    </aside>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Header -->
-        <header class="page-header">
-            <div class="header-content">
-                <h2 class="page-title">Courses</h2>
-                <p class="page-subtitle">Advance your skills with our curated learning paths</p>
+        <div class="course-card">
+          <div class="course-image">
+            <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=programming" alt="JavaScript Mastery">
+            <div class="course-overlay">
+              <button class="btn btn-primary btn-sm">Continue</button>
             </div>
-            <div class="header-actions">
-                <button class="btn btn-secondary">
-                    <i class="fas fa-bell"></i>
-                    <span class="notification-badge">3</span>
-                </button>
-                <button class="btn btn-secondary">
-                    <i class="fas fa-user-circle"></i>
-                </button>
+          </div>
+          <div class="course-content">
+            <h3>JavaScript Mastery</h3>
+            <p class="text-tertiary text-sm">By Code Masters</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 89%"></div>
             </div>
-        </header>
+            <p class="text-tertiary text-sm mt-2">89% Complete</p>
+          </div>
+        </div>
+      </div>
 
-        <!-- Page Content -->
-        <section class="content-area">
-            <!-- Active Courses -->
-            <h3 class="mb-4" style="color: var(--color-accent);">In Progress</h3>
-            <div class="grid grid-3 mb-4">
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=web-development" alt="Advanced React Patterns">
-                        <div class="course-overlay">
-                            <button class="btn btn-primary btn-sm">Continue</button>
-                        </div>
-                    </div>
-                    <div class="course-content">
-                        <h3>Advanced React Patterns</h3>
-                        <p class="text-tertiary text-sm">By Tech Academy</p>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 65%"></div>
-                        </div>
-                        <p class="text-tertiary text-sm mt-2">65% Complete</p>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=design" alt="UI/UX Design Fundamentals">
-                        <div class="course-overlay">
-                            <button class="btn btn-primary btn-sm">Continue</button>
-                        </div>
-                    </div>
-                    <div class="course-content">
-                        <h3>UI/UX Design Fundamentals</h3>
-                        <p class="text-tertiary text-sm">By Design Co</p>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 42%"></div>
-                        </div>
-                        <p class="text-tertiary text-sm mt-2">42% Complete</p>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=programming" alt="JavaScript Mastery">
-                        <div class="course-overlay">
-                            <button class="btn btn-primary btn-sm">Continue</button>
-                        </div>
-                    </div>
-                    <div class="course-content">
-                        <h3>JavaScript Mastery</h3>
-                        <p class="text-tertiary text-sm">By Code Masters</p>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 89%"></div>
-                        </div>
-                        <p class="text-tertiary text-sm mt-2">89% Complete</p>
-                    </div>
-                </div>
+      <!-- Completed Courses -->
+      <h3 class="mb-4" style="color: var(--color-accent);">Completed</h3>
+      <div class="grid grid-3 mb-4">
+        <div class="course-card completed">
+          <div class="course-image">
+            <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=frontend" alt="Web Design Basics">
+            <div class="course-overlay">
+              <i class="fas fa-check-circle"></i>
             </div>
-
-            <!-- Completed Courses -->
-            <h3 class="mb-4" style="color: var(--color-accent);">Completed</h3>
-            <div class="grid grid-3 mb-4">
-                <div class="course-card completed">
-                    <div class="course-image">
-                        <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=frontend" alt="Web Design Basics">
-                        <div class="course-overlay">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                    </div>
-                    <div class="course-content">
-                        <h3>Web Design Basics</h3>
-                        <p class="text-tertiary text-sm">By Design Academy</p>
-                        <div class="flex-between mt-3">
-                            <span class="badge badge-success">Completed</span>
-                            <span class="text-tertiary text-sm">100%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="course-card completed">
-                    <div class="course-image">
-                        <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=html-css" alt="HTML & CSS Mastery">
-                        <div class="course-overlay">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                    </div>
-                    <div class="course-content">
-                        <h3>HTML & CSS Mastery</h3>
-                        <p class="text-tertiary text-sm">By Web Academy</p>
-                        <div class="flex-between mt-3">
-                            <span class="badge badge-success">Completed</span>
-                            <span class="text-tertiary text-sm">100%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="course-card completed">
-                    <div class="course-image">
-                        <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=responsive" alt="Responsive Design">
-                        <div class="course-overlay">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                    </div>
-                    <div class="course-content">
-                        <h3>Responsive Design</h3>
-                        <p class="text-tertiary text-sm">By Mobile Academy</p>
-                        <div class="flex-between mt-3">
-                            <span class="badge badge-success">Completed</span>
-                            <span class="text-tertiary text-sm">100%</span>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="course-content">
+            <h3>Web Design Basics</h3>
+            <p class="text-tertiary text-sm">By Design Academy</p>
+            <div class="flex-between mt-3">
+              <span class="badge badge-success">Completed</span>
+              <span class="text-tertiary text-sm">100%</span>
             </div>
+          </div>
+        </div>
 
-            <!-- Recommended Courses -->
-            <h3 class="mb-4" style="color: var(--color-accent);">Recommended For You</h3>
-            <div class="grid grid-3">
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=nodejs" alt="Node.js Backend Development">
-                        <div class="course-overlay">
-                            <button class="btn btn-primary btn-sm">Enroll</button>
-                        </div>
-                    </div>
-                    <div class="course-content">
-                        <h3>Node.js Backend Development</h3>
-                        <p class="text-tertiary text-sm">By Backend Masters</p>
-                        <div class="flex-between mt-3">
-                            <span class="badge badge-info">Beginner</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=typescript" alt="TypeScript Advanced">
-                        <div class="course-overlay">
-                            <button class="btn btn-primary btn-sm">Enroll</button>
-                        </div>
-                    </div>
-                    <div class="course-content">
-                        <h3>TypeScript Advanced</h3>
-                        <p class="text-tertiary text-sm">By Type Safety Co</p>
-                        <div class="flex-between mt-3">
-                            <span class="badge badge-warning">Advanced</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=database" alt="Database Design">
-                        <div class="course-overlay">
-                            <button class="btn btn-primary btn-sm">Enroll</button>
-                        </div>
-                    </div>
-                    <div class="course-content">
-                        <h3>Database Design</h3>
-                        <p class="text-tertiary text-sm">By Data Academy</p>
-                        <div class="flex-between mt-3">
-                            <span class="badge badge-info">Intermediate</span>
-                        </div>
-                    </div>
-                </div>
+        <div class="course-card completed">
+          <div class="course-image">
+            <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=html-css" alt="HTML & CSS Mastery">
+            <div class="course-overlay">
+              <i class="fas fa-check-circle"></i>
             </div>
-        </section>
-    </main>
+          </div>
+          <div class="course-content">
+            <h3>HTML & CSS Mastery</h3>
+            <p class="text-tertiary text-sm">By Web Academy</p>
+            <div class="flex-between mt-3">
+              <span class="badge badge-success">Completed</span>
+              <span class="text-tertiary text-sm">100%</span>
+            </div>
+          </div>
+        </div>
 
-    <script src="js/app.js"></script>
+        <div class="course-card completed">
+          <div class="course-image">
+            <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=responsive" alt="Responsive Design">
+            <div class="course-overlay">
+              <i class="fas fa-check-circle"></i>
+            </div>
+          </div>
+          <div class="course-content">
+            <h3>Responsive Design</h3>
+            <p class="text-tertiary text-sm">By Mobile Academy</p>
+            <div class="flex-between mt-3">
+              <span class="badge badge-success">Completed</span>
+              <span class="text-tertiary text-sm">100%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recommended Courses -->
+      <h3 class="mb-4" style="color: var(--color-accent);">Recommended For You</h3>
+      <div class="grid grid-3">
+        <div class="course-card">
+          <div class="course-image">
+            <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=nodejs" alt="Node.js Backend Development">
+            <div class="course-overlay">
+              <button class="btn btn-primary btn-sm">Enroll</button>
+            </div>
+          </div>
+          <div class="course-content">
+            <h3>Node.js Backend Development</h3>
+            <p class="text-tertiary text-sm">By Backend Masters</p>
+            <div class="flex-between mt-3">
+              <span class="badge badge-info">Beginner</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-image">
+            <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=typescript" alt="TypeScript Advanced">
+            <div class="course-overlay">
+              <button class="btn btn-primary btn-sm">Enroll</button>
+            </div>
+          </div>
+          <div class="course-content">
+            <h3>TypeScript Advanced</h3>
+            <p class="text-tertiary text-sm">By Type Safety Co</p>
+            <div class="flex-between mt-3">
+              <span class="badge badge-warning">Advanced</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-image">
+            <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=database" alt="Database Design">
+            <div class="course-overlay">
+              <button class="btn btn-primary btn-sm">Enroll</button>
+            </div>
+          </div>
+          <div class="course-content">
+            <h3>Database Design</h3>
+            <p class="text-tertiary text-sm">By Data Academy</p>
+            <div class="flex-between mt-3">
+              <span class="badge badge-info">Intermediate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
 </body>
+
 </html>

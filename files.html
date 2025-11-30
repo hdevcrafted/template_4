@@ -1,284 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Files - Crafters</title>
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Files - Crafters</title>
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <!-- Sidebar Navigation -->
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <h1 class="logo">
-                <i class="fas fa-hammer"></i>
-                <span>Crafters</span>
-            </h1>
-            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
-                <i class="fas fa-bars"></i>
-            </button>
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h1 class="logo">
+        <i class="fas fa-hammer"></i>
+        <span>Crafters</span>
+      </h1>
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="profile.html" class="nav-link">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="projects.html" class="nav-link">
+            <i class="fas fa-project-diagram"></i>
+            <span>Projects</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="friends.html" class="nav-link">
+            <i class="fas fa-users"></i>
+            <span>Friends</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="courses.html" class="nav-link">
+            <i class="fas fa-book"></i>
+            <span>Courses</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="files.html" class="nav-link active">
+            <i class="fas fa-file"></i>
+            <span>Files</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="plans.html" class="nav-link">
+            <i class="fas fa-crown"></i>
+            <span>Plans</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="settings.html" class="nav-link">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <p class="tagline">Craft Your Excellence</p>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Header -->
+    <header class="page-header">
+      <div class="header-content">
+        <h2 class="page-title">Files</h2>
+        <p class="page-subtitle">Manage and organize your documents</p>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-primary" id="uploadBtn">
+          <i class="fas fa-cloud-upload-alt"></i>
+          <span>Upload</span>
+        </button>
+        <button class="btn btn-secondary">
+          <i class="fas fa-bell"></i>
+          <span class="notification-badge">3</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <section class="content-area">
+      <!-- Storage Info -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="flex-between mb-3">
+            <div>
+              <h3>Storage Usage</h3>
+              <p class="text-tertiary text-sm">4.2 GB of 10 GB used</p>
+            </div>
+            <button class="btn btn-secondary btn-sm">Upgrade Plan</button>
+          </div>
+          <div class="storage-bar">
+            <div class="storage-fill" style="width: 42%"></div>
+          </div>
         </div>
+      </div>
 
-        <nav class="sidebar-nav">
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">
-                        <i class="fas fa-home"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="profile.html" class="nav-link">
-                        <i class="fas fa-user"></i>
-                        <span>Profile</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="projects.html" class="nav-link">
-                        <i class="fas fa-project-diagram"></i>
-                        <span>Projects</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="friends.html" class="nav-link">
-                        <i class="fas fa-users"></i>
-                        <span>Friends</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="courses.html" class="nav-link">
-                        <i class="fas fa-book"></i>
-                        <span>Courses</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="files.html" class="nav-link active">
-                        <i class="fas fa-file"></i>
-                        <span>Files</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="plans.html" class="nav-link">
-                        <i class="fas fa-crown"></i>
-                        <span>Plans</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="settings.html" class="nav-link">
-                        <i class="fas fa-cog"></i>
-                        <span>Settings</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="sidebar-footer">
-            <p class="tagline">Craft Your Excellence</p>
+      <!-- Files Table -->
+      <div class="card">
+        <div class="card-header">
+          <h3>All Files (24)</h3>
         </div>
-    </aside>
+        <div class="card-body">
+          <table class="table" id="filesTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Size</th>
+                <th>Modified</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="file-name">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>Design System Documentation.pdf</span>
+                  </div>
+                </td>
+                <td>PDF</td>
+                <td>2.4 MB</td>
+                <td>Nov 28, 2025</td>
+                <td><span class="badge badge-success">Synced</span></td>
+                <td>
+                  <button class="btn btn-sm btn-secondary" title="Download">
+                    <i class="fas fa-download"></i>
+                  </button>
+                  <button class="btn btn-sm btn-secondary" title="Share">
+                    <i class="fas fa-share-alt"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger" onclick="removeItemFromList(this)" title="Delete">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="file-name">
+                    <i class="fas fa-file-image"></i>
+                    <span>Brand Guidelines.fig</span>
+                  </div>
+                </td>
+                <td>Figma</td>
+                <td>8.7 MB</td>
+                <td>Nov 26, 2025</td>
+                <td><span class="badge badge-success">Synced</span></td>
+                <td>
+                  <button class="btn btn-sm btn-secondary" title="Download">
+                    <i class="fas fa-download"></i>
+                  </button>
+                  <button class="btn btn-sm btn-secondary" title="Share">
+                    <i class="fas fa-share-alt"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger" onclick="removeItemFromList(this)" title="Delete">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="file-name">
+                    <i class="fas fa-file-code"></i>
+                    <span>portfolio-website.zip</span>
+                  </div>
+                </td>
+                <td>ZIP</td>
+                <td>15.3 MB</td>
+                <td>Nov 24, 2025</td>
+                <td><span class="badge badge-success">Synced</span></td>
+                <td>
+                  <button class="btn btn-sm btn-secondary" title="Download">
+                    <i class="fas fa-download"></i>
+                  </button>
+                  <button class="btn btn-sm btn-secondary" title="Share">
+                    <i class="fas fa-share-alt"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger" onclick="removeItemFromList(this)" title="Delete">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="file-name">
+                    <i class="fas fa-file-excel"></i>
+                    <span>Project Timeline.xlsx</span>
+                  </div>
+                </td>
+                <td>Excel</td>
+                <td>542 KB</td>
+                <td>Nov 22, 2025</td>
+                <td><span class="badge badge-success">Synced</span></td>
+                <td>
+                  <button class="btn btn-sm btn-secondary" title="Download">
+                    <i class="fas fa-download"></i>
+                  </button>
+                  <button class="btn btn-sm btn-secondary" title="Share">
+                    <i class="fas fa-share-alt"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger" onclick="removeItemFromList(this)" title="Delete">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="file-name">
+                    <i class="fas fa-file-word"></i>
+                    <span>Research Notes.docx</span>
+                  </div>
+                </td>
+                <td>Word</td>
+                <td>1.2 MB</td>
+                <td>Nov 20, 2025</td>
+                <td><span class="badge badge-info">Uploading</span></td>
+                <td>
+                  <button class="btn btn-sm btn-secondary" title="Download">
+                    <i class="fas fa-download"></i>
+                  </button>
+                  <button class="btn btn-sm btn-secondary" title="Share">
+                    <i class="fas fa-share-alt"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger" onclick="removeItemFromList(this)" title="Delete">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="file-name">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>Contract Template.pdf</span>
+                  </div>
+                </td>
+                <td>PDF</td>
+                <td>3.1 MB</td>
+                <td>Nov 18, 2025</td>
+                <td><span class="badge badge-success">Synced</span></td>
+                <td>
+                  <button class="btn btn-sm btn-secondary" title="Download">
+                    <i class="fas fa-download"></i>
+                  </button>
+                  <button class="btn btn-sm btn-secondary" title="Share">
+                    <i class="fas fa-share-alt"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger" onclick="removeItemFromList(this)" title="Delete">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Header -->
-        <header class="page-header">
-            <div class="header-content">
-                <h2 class="page-title">Files</h2>
-                <p class="page-subtitle">Manage and organize your documents</p>
-            </div>
-            <div class="header-actions">
-                <button class="btn btn-primary" id="uploadBtn">
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <span>Upload</span>
-                </button>
-                <button class="btn btn-secondary">
-                    <i class="fas fa-bell"></i>
-                    <span class="notification-badge">3</span>
-                </button>
-            </div>
-        </header>
-
-        <!-- Page Content -->
-        <section class="content-area">
-            <!-- Storage Info -->
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="flex-between mb-3">
-                        <div>
-                            <h3>Storage Usage</h3>
-                            <p class="text-tertiary text-sm">4.2 GB of 10 GB used</p>
-                        </div>
-                        <button class="btn btn-secondary btn-sm">Upgrade Plan</button>
-                    </div>
-                    <div class="storage-bar">
-                        <div class="storage-fill" style="width: 42%"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Files Table -->
-            <div class="card">
-                <div class="card-header">
-                    <h3>All Files (24)</h3>
-                </div>
-                <div class="card-body">
-                    <table class="table" id="filesTable">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Type</th>
-                                <th>Size</th>
-                                <th>Modified</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="file-name">
-                                        <i class="fas fa-file-pdf"></i>
-                                        <span>Design System Documentation.pdf</span>
-                                    </div>
-                                </td>
-                                <td>PDF</td>
-                                <td>2.4 MB</td>
-                                <td>Nov 28, 2025</td>
-                                <td><span class="badge badge-success">Synced</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-secondary" title="Download">
-                                        <i class="fas fa-download"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-secondary" title="Share">
-                                        <i class="fas fa-share-alt"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-danger" onclick="removeItemFromList(this)" title="Delete">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="file-name">
-                                        <i class="fas fa-file-image"></i>
-                                        <span>Brand Guidelines.fig</span>
-                                    </div>
-                                </td>
-                                <td>Figma</td>
-                                <td>8.7 MB</td>
-                                <td>Nov 26, 2025</td>
-                                <td><span class="badge badge-success">Synced</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-secondary" title="Download">
-                                        <i class="fas fa-download"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-secondary" title="Share">
-                                        <i class="fas fa-share-alt"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-danger" onclick="removeItemFromList(this)" title="Delete">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="file-name">
-                                        <i class="fas fa-file-code"></i>
-                                        <span>portfolio-website.zip</span>
-                                    </div>
-                                </td>
-                                <td>ZIP</td>
-                                <td>15.3 MB</td>
-                                <td>Nov 24, 2025</td>
-                                <td><span class="badge badge-success">Synced</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-secondary" title="Download">
-                                        <i class="fas fa-download"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-secondary" title="Share">
-                                        <i class="fas fa-share-alt"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-danger" onclick="removeItemFromList(this)" title="Delete">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="file-name">
-                                        <i class="fas fa-file-excel"></i>
-                                        <span>Project Timeline.xlsx</span>
-                                    </div>
-                                </td>
-                                <td>Excel</td>
-                                <td>542 KB</td>
-                                <td>Nov 22, 2025</td>
-                                <td><span class="badge badge-success">Synced</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-secondary" title="Download">
-                                        <i class="fas fa-download"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-secondary" title="Share">
-                                        <i class="fas fa-share-alt"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-danger" onclick="removeItemFromList(this)" title="Delete">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="file-name">
-                                        <i class="fas fa-file-word"></i>
-                                        <span>Research Notes.docx</span>
-                                    </div>
-                                </td>
-                                <td>Word</td>
-                                <td>1.2 MB</td>
-                                <td>Nov 20, 2025</td>
-                                <td><span class="badge badge-info">Uploading</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-secondary" title="Download">
-                                        <i class="fas fa-download"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-secondary" title="Share">
-                                        <i class="fas fa-share-alt"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-danger" onclick="removeItemFromList(this)" title="Delete">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="file-name">
-                                        <i class="fas fa-file-pdf"></i>
-                                        <span>Contract Template.pdf</span>
-                                    </div>
-                                </td>
-                                <td>PDF</td>
-                                <td>3.1 MB</td>
-                                <td>Nov 18, 2025</td>
-                                <td><span class="badge badge-success">Synced</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-secondary" title="Download">
-                                        <i class="fas fa-download"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-secondary" title="Share">
-                                        <i class="fas fa-share-alt"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-danger" onclick="removeItemFromList(this)" title="Delete">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script src="js/app.js"></script>
+  <script src="js/app.js"></script>
 </body>
+
 </html>

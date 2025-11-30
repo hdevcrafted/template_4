@@ -1,283 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile - Crafters</title>
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - Crafters</title>
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <!-- Sidebar Navigation -->
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <h1 class="logo">
-                <i class="fas fa-hammer"></i>
-                <span>Crafters</span>
-            </h1>
-            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
-                <i class="fas fa-bars"></i>
-            </button>
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h1 class="logo">
+        <i class="fas fa-hammer"></i>
+        <span>Crafters</span>
+      </h1>
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="profile.html" class="nav-link active">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="projects.html" class="nav-link">
+            <i class="fas fa-project-diagram"></i>
+            <span>Projects</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="friends.html" class="nav-link">
+            <i class="fas fa-users"></i>
+            <span>Friends</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="courses.html" class="nav-link">
+            <i class="fas fa-book"></i>
+            <span>Courses</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="files.html" class="nav-link">
+            <i class="fas fa-file"></i>
+            <span>Files</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="plans.html" class="nav-link">
+            <i class="fas fa-crown"></i>
+            <span>Plans</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="settings.html" class="nav-link">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <p class="tagline">Craft Your Excellence</p>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Header -->
+    <header class="page-header">
+      <div class="header-content">
+        <h2 class="page-title">Profile</h2>
+        <p class="page-subtitle">Your personal information and achievements</p>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-secondary">
+          <i class="fas fa-bell"></i>
+          <span class="notification-badge">3</span>
+        </button>
+        <button class="btn btn-secondary">
+          <i class="fas fa-user-circle"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <section class="content-area">
+      <!-- Profile Header Card -->
+      <div class="card profile-header-card mb-4">
+        <div class="profile-banner"></div>
+        <div class="profile-info">
+          <div class="profile-avatar">
+            <img src="https://api.unsplash.com/photos/random?w=200&q=80&query=portrait-professional"
+              alt="Marcus Thompson">
+          </div>
+          <div class="profile-details">
+            <h2>Marcus Thompson</h2>
+            <p class="text-tertiary">@marcus_thompson</p>
+            <p class="profile-bio">Creative designer and full-stack developer passionate about crafting digital
+              excellence.</p>
+            <div class="profile-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>San Francisco, CA</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-envelope"></i>
+                <span>marcus@crafters.io</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Member since 2023</span>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary">Edit Profile</button>
+        </div>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="grid grid-4 mb-4">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-project-diagram"></i>
+          </div>
+          <div class="stat-content">
+            <p class="stat-label">Projects</p>
+            <p class="stat-value">18</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="stat-content">
+            <p class="stat-label">Followers</p>
+            <p class="stat-value">342</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="stat-content">
+            <p class="stat-label">Achievements</p>
+            <p class="stat-value">12</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-fire"></i>
+          </div>
+          <div class="stat-content">
+            <p class="stat-label">Streak</p>
+            <p class="stat-value">45</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Section -->
+      <div class="grid grid-2 mb-4">
+        <div class="card">
+          <div class="card-header">
+            <h3>Skills</h3>
+          </div>
+          <div class="card-body">
+            <div class="skills-list">
+              <div class="skill-item">
+                <span class="skill-name">UI/UX Design</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 95%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Frontend Development</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">JavaScript</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 88%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Web Development</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" style="width: 92%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <nav class="sidebar-nav">
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">
-                        <i class="fas fa-home"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="profile.html" class="nav-link active">
-                        <i class="fas fa-user"></i>
-                        <span>Profile</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="projects.html" class="nav-link">
-                        <i class="fas fa-project-diagram"></i>
-                        <span>Projects</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="friends.html" class="nav-link">
-                        <i class="fas fa-users"></i>
-                        <span>Friends</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="courses.html" class="nav-link">
-                        <i class="fas fa-book"></i>
-                        <span>Courses</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="files.html" class="nav-link">
-                        <i class="fas fa-file"></i>
-                        <span>Files</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="plans.html" class="nav-link">
-                        <i class="fas fa-crown"></i>
-                        <span>Plans</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="settings.html" class="nav-link">
-                        <i class="fas fa-cog"></i>
-                        <span>Settings</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="sidebar-footer">
-            <p class="tagline">Craft Your Excellence</p>
+        <!-- Achievements Section -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Achievements</h3>
+          </div>
+          <div class="card-body">
+            <div class="achievements-list">
+              <div class="achievement-item">
+                <i class="fas fa-medal"></i>
+                <div>
+                  <p class="achievement-title">Top Contributor</p>
+                  <p class="text-tertiary text-sm">50+ project contributions</p>
+                </div>
+              </div>
+              <div class="achievement-item">
+                <i class="fas fa-trophy"></i>
+                <div>
+                  <p class="achievement-title">Course Master</p>
+                  <p class="text-tertiary text-sm">Completed 10+ courses</p>
+                </div>
+              </div>
+              <div class="achievement-item">
+                <i class="fas fa-star"></i>
+                <div>
+                  <p class="achievement-title">Community Leader</p>
+                  <p class="text-tertiary text-sm">300+ followers</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </aside>
+      </div>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Header -->
-        <header class="page-header">
-            <div class="header-content">
-                <h2 class="page-title">Profile</h2>
-                <p class="page-subtitle">Your personal information and achievements</p>
+      <!-- Recent Activity -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Recent Activity</h3>
+        </div>
+        <div class="card-body">
+          <div class="activity-list">
+            <div class="activity-item">
+              <div class="activity-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="activity-content">
+                <p class="activity-title">Completed "Advanced React Patterns" course</p>
+                <p class="activity-time">2 days ago</p>
+              </div>
             </div>
-            <div class="header-actions">
-                <button class="btn btn-secondary">
-                    <i class="fas fa-bell"></i>
-                    <span class="notification-badge">3</span>
-                </button>
-                <button class="btn btn-secondary">
-                    <i class="fas fa-user-circle"></i>
-                </button>
+            <div class="activity-item">
+              <div class="activity-icon">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="activity-content">
+                <p class="activity-title">Received 100 likes on "E-commerce Platform" project</p>
+                <p class="activity-time">5 days ago</p>
+              </div>
             </div>
-        </header>
-
-        <!-- Page Content -->
-        <section class="content-area">
-            <!-- Profile Header Card -->
-            <div class="card profile-header-card mb-4">
-                <div class="profile-banner"></div>
-                <div class="profile-info">
-                    <div class="profile-avatar">
-                        <img src="https://api.unsplash.com/photos/random?w=200&q=80&query=portrait-professional" alt="Marcus Thompson">
-                    </div>
-                    <div class="profile-details">
-                        <h2>Marcus Thompson</h2>
-                        <p class="text-tertiary">@marcus_thompson</p>
-                        <p class="profile-bio">Creative designer and full-stack developer passionate about crafting digital excellence.</p>
-                        <div class="profile-meta">
-                            <div class="meta-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>San Francisco, CA</span>
-                            </div>
-                            <div class="meta-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>marcus@crafters.io</span>
-                            </div>
-                            <div class="meta-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <span>Member since 2023</span>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary">Edit Profile</button>
-                </div>
+            <div class="activity-item">
+              <div class="activity-icon">
+                <i class="fas fa-plus-circle"></i>
+              </div>
+              <div class="activity-content">
+                <p class="activity-title">Published new project: "Design System"</p>
+                <p class="activity-time">1 week ago</p>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-            <!-- Stats Grid -->
-            <div class="grid grid-4 mb-4">
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <div class="stat-content">
-                        <p class="stat-label">Projects</p>
-                        <p class="stat-value">18</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="stat-content">
-                        <p class="stat-label">Followers</p>
-                        <p class="stat-value">342</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="stat-content">
-                        <p class="stat-label">Achievements</p>
-                        <p class="stat-value">12</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-fire"></i>
-                    </div>
-                    <div class="stat-content">
-                        <p class="stat-label">Streak</p>
-                        <p class="stat-value">45</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Skills Section -->
-            <div class="grid grid-2 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Skills</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <span class="skill-name">UI/UX Design</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 95%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Frontend Development</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">JavaScript</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 88%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <span class="skill-name">Web Development</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 92%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Achievements Section -->
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Achievements</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="achievements-list">
-                            <div class="achievement-item">
-                                <i class="fas fa-medal"></i>
-                                <div>
-                                    <p class="achievement-title">Top Contributor</p>
-                                    <p class="text-tertiary text-sm">50+ project contributions</p>
-                                </div>
-                            </div>
-                            <div class="achievement-item">
-                                <i class="fas fa-trophy"></i>
-                                <div>
-                                    <p class="achievement-title">Course Master</p>
-                                    <p class="text-tertiary text-sm">Completed 10+ courses</p>
-                                </div>
-                            </div>
-                            <div class="achievement-item">
-                                <i class="fas fa-star"></i>
-                                <div>
-                                    <p class="achievement-title">Community Leader</p>
-                                    <p class="text-tertiary text-sm">300+ followers</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Recent Activity -->
-            <div class="card">
-                <div class="card-header">
-                    <h3>Recent Activity</h3>
-                </div>
-                <div class="card-body">
-                    <div class="activity-list">
-                        <div class="activity-item">
-                            <div class="activity-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="activity-content">
-                                <p class="activity-title">Completed "Advanced React Patterns" course</p>
-                                <p class="activity-time">2 days ago</p>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="activity-content">
-                                <p class="activity-title">Received 100 likes on "E-commerce Platform" project</p>
-                                <p class="activity-time">5 days ago</p>
-                            </div>
-                        </div>
-                        <div class="activity-item">
-                            <div class="activity-icon">
-                                <i class="fas fa-plus-circle"></i>
-                            </div>
-                            <div class="activity-content">
-                                <p class="activity-title">Published new project: "Design System"</p>
-                                <p class="activity-time">1 week ago</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script src="js/app.js"></script>
+  <script src="js/app.js"></script>
 </body>
+
 </html>

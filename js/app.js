@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initSidebar();
     initForms();
     setActiveNavLink();
+    initNotifications();
+    initFavorites();
 });
 
 // ========== SIDEBAR FUNCTIONALITY ==========
@@ -55,64 +57,16 @@ function setActiveNavLink() {
     });
 }
 
-// ========== FORM HANDLING ==========
-function initForms() {
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-        form.addEventListener('submit', handleFormSubmit);
-    });
-}
-
-function handleFormSubmit(e) {
-    e.preventDefault();
-    const form = e.target;
-
-    // Basic validation
-    if (validateForm(form)) {
-        showNotification('Success!', 'Form submitted successfully.', 'success');
-        form.reset();
+// ========== NOTIFICATIONS SYSTEM ==========
+function initNotifications() {
+    const notificationBtn = document.getElementById('notificationBtn');
+    if (notificationBtn) {
+        notificationBtn.addEventListener('click', () => {
+            showNotification('New Update', 'You have 3 unread messages', 'info');
+        });
     }
 }
 
-function validateForm(form) {
-    const inputs = form.querySelectorAll('.form-control[required]');
-    let isValid = true;
-
-    inputs.forEach(input => {
-        if (!input.value.trim()) {
-            showFieldError(input, 'This field is required');
-            isValid = false;
-        } else {
-            clearFieldError(input);
-        }
-    });
-
-    return isValid;
-}
-
-function showFieldError(input, message) {
-    input.classList.add('form-error');
-    let errorEl = input.nextElementSibling;
-
-    if (!errorEl || !errorEl.classList.contains('form-error-message')) {
-        errorEl = document.createElement('div');
-        errorEl.className = 'form-error-message';
-        input.parentNode.insertBefore(errorEl, input.nextSibling);
-    }
-
-    errorEl.textContent = message;
-}
-
-function clearFieldError(input) {
-    input.classList.remove('form-error');
-    const errorEl = input.nextElementSibling;
-
-    if (errorEl && errorEl.classList.contains('form-error-message')) {
-        errorEl.remove();
-    }
-}
-
-// ========== NOTIFICATIONS ==========
 function showNotification(title, message, type = 'info') {
     // Create notification container if it doesn't exist
     let container = document.getElementById('notification-container');
@@ -198,6 +152,83 @@ function getNotificationColor(type) {
     return colors[type] || colors.info;
 }
 
+// ========== FORM HANDLING ==========
+function initForms() {
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', handleFormSubmit);
+    });
+}
+
+function handleFormSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+
+    // Basic validation
+    if (validateForm(form)) {
+        showNotification('Success!', 'Form submitted successfully.', 'success');
+        form.reset();
+    }
+}
+
+function validateForm(form) {
+    const inputs = form.querySelectorAll('.form-control[required]');
+    let isValid = true;
+
+    inputs.forEach(input => {
+        if (!input.value.trim()) {
+            showFieldError(input, 'This field is required');
+            isValid = false;
+        } else {
+            clearFieldError(input);
+        }
+    });
+
+    return isValid;
+}
+
+function showFieldError(input, message) {
+    input.classList.add('form-error');
+    let errorEl = input.nextElementSibling;
+
+    if (!errorEl || !errorEl.classList.contains('form-error-message')) {
+        errorEl = document.createElement('div');
+        errorEl.className = 'form-error-message';
+        input.parentNode.insertBefore(errorEl, input.nextSibling);
+    }
+
+    errorEl.textContent = message;
+}
+
+function clearFieldError(input) {
+    input.classList.remove('form-error');
+    const errorEl = input.nextElementSibling;
+
+    if (errorEl && errorEl.classList.contains('form-error-message')) {
+        errorEl.remove();
+    }
+}
+
+// ========== FAVORITES SYSTEM ==========
+function initFavorites() {
+    const favoriteButtons = document.querySelectorAll('[data-favorite]');
+    favoriteButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleFavorite(this);
+        });
+    });
+}
+
+function toggleFavorite(button) {
+    button.classList.toggle('favorited');
+    const isFavorited = button.classList.contains('favorited');
+    button.innerHTML = isFavorited ? '<i class="fas fa-heart"></i>' : '<i class="far fa-heart"></i>';
+    
+    const action = isFavorited ? 'added to' : 'removed from';
+    showNotification('Favorite', `Item ${action} your favorites`, 'success');
+}
+
 // ========== UTILITY FUNCTIONS ==========
 
 /**
@@ -220,10 +251,13 @@ function addItemToList(listSelector, itemHTML) {
  * Remove item from a list
  */
 function removeItemFromList(button) {
-    const row = button.closest('tr') || button.closest('.item-card');
+    const row = button.closest('tr') || button.closest('.item-card') || button.closest('.project-card') || button.closest('.course-card');
     if (row) {
         row.style.animation = 'slideOut 300ms ease-out';
-        setTimeout(() => row.remove(), 300);
+        setTimeout(() => {
+            row.remove();
+            showNotification('Deleted', 'Item removed successfully', 'success');
+        }, 300);
     }
 }
 
@@ -254,15 +288,126 @@ function getInitials(name) {
 }
 
 /**
- * Toggle favorite
+ * Copy to clipboard
  */
-function toggleFavorite(button) {
-    button.classList.toggle('favorited');
-    const isFavorited = button.classList.contains('favorited');
-    button.innerHTML = isFavorited ? '<i class="fas fa-heart"></i>' : '<i class="far fa-heart"></i>';
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        showNotification('Copied', 'Text copied to clipboard', 'success');
+    }).catch(() => {
+        showNotification('Error', 'Failed to copy to clipboard', 'error');
+    });
 }
 
-// ========== ANIMATIONS ==========
+/**
+ * Debounce function for optimized event listeners
+ */
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+/**
+ * Throttle function for performance
+ */
+function throttle(func, limit) {
+    let inThrottle;
+    return function(...args) {
+        if (!inThrottle) {
+            func.apply(this, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
+
+/**
+ * Search/Filter functionality
+ */
+function setupSearch(inputSelector, tableSelector) {
+    const searchInput = document.querySelector(inputSelector);
+    const table = document.querySelector(tableSelector);
+    
+    if (!searchInput || !table) return;
+
+    searchInput.addEventListener('keyup', debounce(function() {
+        const searchTerm = this.value.toLowerCase();
+        const rows = table.querySelectorAll('tbody tr');
+        
+        rows.forEach(row => {
+            const text = row.textContent.toLowerCase();
+            row.style.display = text.includes(searchTerm) ? '' : 'none';
+        });
+    }, 300));
+}
+
+/**
+ * Sort table by column
+ */
+function setupTableSort(tableSelector) {
+    const table = document.querySelector(tableSelector);
+    if (!table) return;
+
+    const headers = table.querySelectorAll('th');
+    headers.forEach((header, columnIndex) => {
+        header.style.cursor = 'pointer';
+        header.addEventListener('click', () => {
+            const tbody = table.querySelector('tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            
+            rows.sort((a, b) => {
+                const aValue = a.cells[columnIndex].textContent.trim();
+                const bValue = b.cells[columnIndex].textContent.trim();
+                
+                if (!isNaN(aValue) && !isNaN(bValue)) {
+                    return aValue - bValue;
+                }
+                return aValue.localeCompare(bValue);
+            });
+            
+            rows.forEach(row => tbody.appendChild(row));
+        });
+    });
+}
+
+/**
+ * Export table to CSV
+ */
+function exportTableToCSV(tableSelector, filename = 'export.csv') {
+    const table = document.querySelector(tableSelector);
+    if (!table) return;
+
+    let csv = [];
+    const rows = table.querySelectorAll('tr');
+    
+    rows.forEach(row => {
+        let csvRow = [];
+        row.querySelectorAll('td, th').forEach(cell => {
+            csvRow.push('"' + cell.textContent.trim() + '"');
+        });
+        csv.push(csvRow.join(','));
+    });
+    
+    downloadCSV(csv.join('\n'), filename);
+}
+
+function downloadCSV(csv, filename) {
+    const csvFile = new Blob([csv], { type: 'text/csv' });
+    const downloadLink = document.createElement('a');
+    downloadLink.href = URL.createObjectURL(csvFile);
+    downloadLink.download = filename;
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+}
+
+// ========== ANIMATIONS & STYLES ==========
 const style = document.createElement('style');
 style.textContent = `
     @keyframes slideIn {
@@ -338,6 +483,10 @@ style.textContent = `
 
     .content-area::-webkit-scrollbar-thumb:hover {
         background-color: rgba(212, 175, 55, 0.5);
+    }
+
+    .favorited {
+        color: #ff6b6b !important;
     }
 `;
 document.head.appendChild(style);
