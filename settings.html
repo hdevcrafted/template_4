@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Crafters</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1 class="logo">
+                <i class="fas fa-hammer"></i>
+                <span>Crafters</span>
+            </h1>
+            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="profile.html" class="nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html" class="nav-link">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Projects</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="friends.html" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Friends</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="courses.html" class="nav-link">
+                        <i class="fas fa-book"></i>
+                        <span>Courses</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="files.html" class="nav-link">
+                        <i class="fas fa-file"></i>
+                        <span>Files</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="plans.html" class="nav-link">
+                        <i class="fas fa-crown"></i>
+                        <span>Plans</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.html" class="nav-link active">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p class="tagline">Craft Your Excellence</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="page-header">
+            <div class="header-content">
+                <h2 class="page-title">Settings</h2>
+                <p class="page-subtitle">Manage your account and preferences</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-secondary">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Page Content -->
+        <section class="content-area">
+            <!-- Settings Tabs Navigation -->
+            <div class="settings-nav mb-4" style="display: flex; gap: 20px; border-bottom: 1px solid var(--color-border); padding-bottom: 20px;">
+                <button class="settings-tab active" data-tab="account">
+                    <i class="fas fa-user"></i> Account
+                </button>
+                <button class="settings-tab" data-tab="notifications">
+                    <i class="fas fa-bell"></i> Notifications
+                </button>
+                <button class="settings-tab" data-tab="privacy">
+                    <i class="fas fa-shield-alt"></i> Privacy
+                </button>
+                <button class="settings-tab" data-tab="billing">
+                    <i class="fas fa-credit-card"></i> Billing
+                </button>
+            </div>
+
+            <!-- Account Settings -->
+            <div class="settings-panel" id="account-panel">
+                <div class="grid grid-2 gap-4">
+                    <!-- Personal Information -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Personal Information</h3>
+                        </div>
+                        <form class="card-body">
+                            <div class="form-group">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-control" value="Marcus" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" value="Thompson" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" value="marcus@crafters.io" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Username</label>
+                                <input type="text" class="form-control" value="marcus_thompson" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+
+                    <!-- Password & Security -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Password & Security</h3>
+                        </div>
+                        <form class="card-body">
+                            <div class="form-group">
+                                <label class="form-label">Current Password</label>
+                                <input type="password" class="form-control" placeholder="Enter current password" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">New Password</label>
+                                <input type="password" class="form-control" placeholder="Enter new password" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" placeholder="Confirm new password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update Password</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Two-Factor Authentication -->
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h3>Two-Factor Authentication</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="flex-between">
+                            <div>
+                                <p>Enhance your account security with 2FA</p>
+                                <p class="text-tertiary text-sm">Add an extra layer of security to your account</p>
+                            </div>
+                            <button class="btn btn-secondary">Enable 2FA</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notifications Settings -->
+            <div class="settings-panel" id="notifications-panel" style="display: none;">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Notification Preferences</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="notification-setting">
+                            <div class="flex-between mb-3 pb-3" style="border-bottom: 1px solid var(--color-border);">
+                                <div>
+                                    <h4 style="margin: 0 0 4px 0; color: var(--color-text-primary);">Email Notifications</h4>
+                                    <p class="text-tertiary text-sm">Receive emails about your account activity</p>
+                                </div>
+                                <input type="checkbox" class="form-checkbox" checked>
+                            </div>
+
+                            <div class="flex-between mb-3 pb-3" style="border-bottom: 1px solid var(--color-border);">
+                                <div>
+                                    <h4 style="margin: 0 0 4px 0; color: var(--color-text-primary);">Friend Requests</h4>
+                                    <p class="text-tertiary text-sm">Get notified when someone sends a friend request</p>
+                                </div>
+                                <input type="checkbox" class="form-checkbox" checked>
+                            </div>
+
+                            <div class="flex-between mb-3 pb-3" style="border-bottom: 1px solid var(--color-border);">
+                                <div>
+                                    <h4 style="margin: 0 0 4px 0; color: var(--color-text-primary);">Course Updates</h4>
+                                    <p class="text-tertiary text-sm">Notifications about new courses and materials</p>
+                                </div>
+                                <input type="checkbox" class="form-checkbox" checked>
+                            </div>
+
+                            <div class="flex-between mb-3 pb-3" style="border-bottom: 1px solid var(--color-border);">
+                                <div>
+                                    <h4 style="margin: 0 0 4px 0; color: var(--color-text-primary);">Project Collaborators</h4>
+                                    <p class="text-tertiary text-sm">Updates from your project collaborators</p>
+                                </div>
+                                <input type="checkbox" class="form-checkbox">
+                            </div>
+
+                            <div class="flex-between">
+                                <div>
+                                    <h4 style="margin: 0 0 4px 0; color: var(--color-text-primary);">Marketing Emails</h4>
+                                    <p class="text-tertiary text-sm">Receive updates about new features and offers</p>
+                                </div>
+                                <input type="checkbox" class="form-checkbox">
+                            </div>
+                        </div>
+                        <button class="btn btn-primary mt-4">Save Preferences</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacy Settings -->
+            <div class="settings-panel" id="privacy-panel" style="display: none;">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Privacy Controls</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="privacy-setting">
+                            <div class="flex-between mb-3 pb-3" style="border-bottom: 1px solid var(--color-border);">
+                                <div>
+                                    <h4 style="margin: 0 0 4px 0; color: var(--color-text-primary);">Profile Visibility</h4>
+                                    <p class="text-tertiary text-sm">Allow others to view your profile</p>
+                                </div>
+                                <select class="form-control" style="width: auto;">
+                                    <option>Public</option>
+                                    <option>Friends Only</option>
+                                    <option>Private</option>
+                                </select>
+                            </div>
+
+                            <div class="flex-between mb-3 pb-3" style="border-bottom: 1px solid var(--color-border);">
+                                <div>
+                                    <h4 style="margin: 0 0 4px 0; color: var(--color-text-primary);">Show Online Status</h4>
+                                    <p class="text-tertiary text-sm">Let others know when you're online</p>
+                                </div>
+                                <input type="checkbox" class="form-checkbox" checked>
+                            </div>
+
+                            <div class="flex-between">
+                                <div>
+                                    <h4 style="margin: 0 0 4px 0; color: var(--color-text-primary);">Allow Search Indexing</h4>
+                                    <p class="text-tertiary text-sm">Allow search engines to index your profile</p>
+                                </div>
+                                <input type="checkbox" class="form-checkbox" checked>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary mt-4">Save Privacy Settings</button>
+                    </div>
+                </div>
+
+                <!-- Danger Zone -->
+                <div class="card mt-4" style="border-color: var(--color-error); border-width: 2px;">
+                    <div class="card-header" style="background-color: rgba(255, 107, 107, 0.1);">
+                        <h3 style="color: var(--color-error);">Danger Zone</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Once you delete your account, there is no going back. Please be certain.</p>
+                        <button class="btn btn-danger mt-3">Delete Account</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Billing Settings -->
+            <div class="settings-panel" id="billing-panel" style="display: none;">
+                <div class="grid grid-2 gap-4">
+                    <!-- Current Plan -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Current Plan</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <p class="text-sm text-tertiary">Plan Type</p>
+                                <h3 style="color: var(--color-accent); margin: 8px 0 0 0;">Professional Plan</h3>
+                            </div>
+                            <div class="mb-4">
+                                <p class="text-sm text-tertiary">Billing Cycle</p>
+                                <p style="margin: 8px 0 0 0; color: var(--color-text-primary);">Monthly - $29/month</p>
+                            </div>
+                            <div class="mb-4">
+                                <p class="text-sm text-tertiary">Next Billing Date</p>
+                                <p style="margin: 8px 0 0 0; color: var(--color-text-primary);">December 15, 2025</p>
+                            </div>
+                            <button class="btn btn-secondary">Change Plan</button>
+                        </div>
+                    </div>
+
+                    <!-- Billing History -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Billing Method</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4" style="padding: 12px; background-color: var(--color-bg-light); border-radius: 6px;">
+                                <p class="text-sm" style="margin: 0 0 8px 0;">
+                                    <i class="fas fa-credit-card" style="margin-right: 8px; color: var(--color-accent);"></i>
+                                    <strong>Visa</strong>
+                                </p>
+                                <p class="text-tertiary text-sm" style="margin: 0;">•••• •••• •••• 4242</p>
+                                <p class="text-tertiary text-sm" style="margin: 4px 0 0 0;">Expires 12/26</p>
+                            </div>
+                            <button class="btn btn-secondary btn-sm">Update Payment Method</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Invoices -->
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h3>Recent Invoices</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>November 15, 2025</td>
+                                    <td>$29.00</td>
+                                    <td><span class="badge badge-success">Paid</span></td>
+                                    <td><button class="btn btn-sm btn-secondary"><i class="fas fa-download"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>October 15, 2025</td>
+                                    <td>$29.00</td>
+                                    <td><span class="badge badge-success">Paid</span></td>
+                                    <td><button class="btn btn-sm btn-secondary"><i class="fas fa-download"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>September 15, 2025</td>
+                                    <td>$29.00</td>
+                                    <td><span class="badge badge-success">Paid</span></td>
+                                    <td><button class="btn btn-sm btn-secondary"><i class="fas fa-download"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script>
+        // Settings Tab Navigation
+        document.querySelectorAll('.settings-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+                
+                // Hide all panels
+                document.querySelectorAll('.settings-panel').forEach(panel => {
+                    panel.style.display = 'none';
+                });
+                
+                // Remove active class from all tabs
+                document.querySelectorAll('.settings-tab').forEach(t => {
+                    t.classList.remove('active');
+                });
+                
+                // Show selected panel and mark tab as active
+                document.getElementById(tabName + '-panel').style.display = 'block';
+                this.classList.add('active');
+            });
+        });
+
+        // Add CSS for active tab
+        const style = document.createElement('style');
+        style.textContent = `
+            .settings-tab {
+                background: none;
+                border: none;
+                color: var(--color-text-secondary);
+                cursor: pointer;
+                padding: 8px 0;
+                font-size: 14px;
+                transition: all var(--transition-base);
+                border-bottom: 2px solid transparent;
+            }
+
+            .settings-tab:hover {
+                color: var(--color-accent);
+            }
+
+            .settings-tab.active {
+                color: var(--color-accent);
+                border-bottom-color: var(--color-accent);
+            }
+
+            .gap-4 {
+                gap: 32px;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

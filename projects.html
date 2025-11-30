@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Crafters</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1 class="logo">
+                <i class="fas fa-hammer"></i>
+                <span>Crafters</span>
+            </h1>
+            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="profile.html" class="nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html" class="nav-link active">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Projects</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="friends.html" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Friends</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="courses.html" class="nav-link">
+                        <i class="fas fa-book"></i>
+                        <span>Courses</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="files.html" class="nav-link">
+                        <i class="fas fa-file"></i>
+                        <span>Files</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="plans.html" class="nav-link">
+                        <i class="fas fa-crown"></i>
+                        <span>Plans</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.html" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p class="tagline">Craft Your Excellence</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="page-header">
+            <div class="header-content">
+                <h2 class="page-title">Projects</h2>
+                <p class="page-subtitle">Manage and showcase your creative work</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-primary" id="newProjectBtn">
+                    <i class="fas fa-plus"></i>
+                    <span>New Project</span>
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Page Content -->
+        <section class="content-area">
+            <!-- Projects Grid -->
+            <div class="grid grid-3" id="projectsGrid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=design-ui" alt="E-Commerce Platform">
+                    </div>
+                    <div class="project-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p class="text-tertiary">A fully responsive e-commerce solution with payment integration.</p>
+                        <div class="project-meta">
+                            <span class="badge badge-success">Active</span>
+                            <span class="text-tertiary text-sm">15 days ago</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat-mini">
+                                <i class="fas fa-star"></i>
+                                <span>248</span>
+                            </div>
+                            <div class="stat-mini">
+                                <i class="fas fa-code-branch"></i>
+                                <span>12</span>
+                            </div>
+                            <div class="stat-mini">
+                                <i class="fas fa-eye"></i>
+                                <span>1.2k</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-sm btn-secondary">View</button>
+                            <button class="btn btn-sm btn-secondary">Edit</button>
+                            <button class="btn btn-sm btn-danger" onclick="removeItemFromList(this)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=mobile-app" alt="Design System">
+                    </div>
+                    <div class="project-content">
+                        <h3>Design System</h3>
+                        <p class="text-tertiary">Comprehensive component library with documentation.</p>
+                        <div class="project-meta">
+                            <span class="badge badge-success">Active</span>
+                            <span class="text-tertiary text-sm">1 week ago</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat-mini">
+                                <i class="fas fa-star"></i>
+                                <span>156</span>
+                            </div>
+                            <div class="stat-mini">
+                                <i class="fas fa-code-branch"></i>
+                                <span>8</span>
+                            </div>
+                            <div class="stat-mini">
+                                <i class="fas fa-eye"></i>
+                                <span>892</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-sm btn-secondary">View</button>
+                            <button class="btn btn-sm btn-secondary">Edit</button>
+                            <button class="btn btn-sm btn-danger" onclick="removeItemFromList(this)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=web-development" alt="Portfolio Website">
+                    </div>
+                    <div class="project-content">
+                        <h3>Portfolio Website</h3>
+                        <p class="text-tertiary">Personal portfolio with project showcase and blog.</p>
+                        <div class="project-meta">
+                            <span class="badge badge-info">In Progress</span>
+                            <span class="text-tertiary text-sm">3 days ago</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat-mini">
+                                <i class="fas fa-star"></i>
+                                <span>89</span>
+                            </div>
+                            <div class="stat-mini">
+                                <i class="fas fa-code-branch"></i>
+                                <span>5</span>
+                            </div>
+                            <div class="stat-mini">
+                                <i class="fas fa-eye"></i>
+                                <span>542</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-sm btn-secondary">View</button>
+                            <button class="btn btn-sm btn-secondary">Edit</button>
+                            <button class="btn btn-sm btn-danger" onclick="removeItemFromList(this)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=technology" alt="API Dashboard">
+                    </div>
+                    <div class="project-content">
+                        <h3>API Dashboard</h3>
+                        <p class="text-tertiary">Real-time analytics dashboard for API monitoring.</p>
+                        <div class="project-meta">
+                            <span class="badge badge-success">Active</span>
+                            <span class="text-tertiary text-sm">2 weeks ago</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat-mini">
+                                <i class="fas fa-star"></i>
+                                <span>203</span>
+                            </div>
+                            <div class="stat-mini">
+                                <i class="fas fa-code-branch"></i>
+                                <span>18</span>
+                            </div>
+                            <div class="stat-mini">
+                                <i class="fas fa-eye"></i>
+                                <span>1.1k</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-sm btn-secondary">View</button>
+                            <button class="btn btn-sm btn-secondary">Edit</button>
+                            <button class="btn btn-sm btn-danger" onclick="removeItemFromList(this)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=creative" alt="Social Network">
+                    </div>
+                    <div class="project-content">
+                        <h3>Social Network</h3>
+                        <p class="text-tertiary">Community platform for creative professionals.</p>
+                        <div class="project-meta">
+                            <span class="badge badge-warning">Planning</span>
+                            <span class="text-tertiary text-sm">1 month ago</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat-mini">
+                                <i class="fas fa-star"></i>
+                                <span>124</span>
+                            </div>
+                            <div class="stat-mini">
+                                <i class="fas fa-code-branch"></i>
+                                <span>3</span>
+                            </div>
+                            <div class="stat-mini">
+                                <i class="fas fa-eye"></i>
+                                <span>412</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-sm btn-secondary">View</button>
+                            <button class="btn btn-sm btn-secondary">Edit</button>
+                            <button class="btn btn-sm btn-danger" onclick="removeItemFromList(this)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://api.unsplash.com/photos/random?w=400&q=80&query=learning" alt="Learning Platform">
+                    </div>
+                    <div class="project-content">
+                        <h3>Learning Platform</h3>
+                        <p class="text-tertiary">Interactive online learning platform with courses.</p>
+                        <div class="project-meta">
+                            <span class="badge badge-success">Active</span>
+                            <span class="text-tertiary text-sm">5 days ago</span>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat-mini">
+                                <i class="fas fa-star"></i>
+                                <span>312</span>
+                            </div>
+                            <div class="stat-mini">
+                                <i class="fas fa-code-branch"></i>
+                                <span>22</span>
+                            </div>
+                            <div class="stat-mini">
+                                <i class="fas fa-eye"></i>
+                                <span>2.1k</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <button class="btn btn-sm btn-secondary">View</button>
+                            <button class="btn btn-sm btn-secondary">Edit</button>
+                            <button class="btn btn-sm btn-danger" onclick="removeItemFromList(this)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

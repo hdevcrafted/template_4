@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plans - Crafters</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1 class="logo">
+                <i class="fas fa-hammer"></i>
+                <span>Crafters</span>
+            </h1>
+            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="profile.html" class="nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html" class="nav-link">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Projects</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="friends.html" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Friends</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="courses.html" class="nav-link">
+                        <i class="fas fa-book"></i>
+                        <span>Courses</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="files.html" class="nav-link">
+                        <i class="fas fa-file"></i>
+                        <span>Files</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="plans.html" class="nav-link active">
+                        <i class="fas fa-crown"></i>
+                        <span>Plans</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.html" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p class="tagline">Craft Your Excellence</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="page-header">
+            <div class="header-content">
+                <h2 class="page-title">Plans & Pricing</h2>
+                <p class="page-subtitle">Choose the perfect plan for your needs</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-secondary">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Page Content -->
+        <section class="content-area">
+            <!-- Plans Section -->
+            <div class="pricing-toggle mb-4" style="text-align: center;">
+                <label style="color: var(--color-text-secondary); font-weight: var(--font-weight-medium);">
+                    <input type="radio" name="billing" value="monthly" checked> Monthly
+                </label>
+                <label style="margin-left: 30px; color: var(--color-text-secondary); font-weight: var(--font-weight-medium);">
+                    <input type="radio" name="billing" value="yearly"> Yearly (Save 20%)
+                </label>
+            </div>
+
+            <div class="grid grid-3">
+                <!-- Starter Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <p class="text-tertiary">Perfect to get started</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">9</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Up to 10 Projects</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>5 GB Storage</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Basic Support</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Community Access</span>
+                        </li>
+                        <li class="disabled">
+                            <i class="fas fa-times"></i>
+                            <span>Advanced Analytics</span>
+                        </li>
+                        <li class="disabled">
+                            <i class="fas fa-times"></i>
+                            <span>Priority Support</span>
+                        </li>
+                    </ul>
+                    <button class="btn btn-secondary btn-block">Get Started</button>
+                </div>
+
+                <!-- Professional Plan -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">
+                        <i class="fas fa-star"></i> Most Popular
+                    </div>
+                    <div class="pricing-header">
+                        <h3>Professional</h3>
+                        <p class="text-tertiary">For serious creators</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">29</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Unlimited Projects</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>100 GB Storage</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Priority Support</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Advanced Analytics</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Team Collaboration</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Custom Branding</span>
+                        </li>
+                    </ul>
+                    <button class="btn btn-primary btn-block">Subscribe Now</button>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <p class="text-tertiary">For large teams</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">99</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Everything in Professional</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Unlimited Storage</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Dedicated Account Manager</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>Advanced Security</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>API Access</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i>
+                            <span>24/7 Support</span>
+                        </li>
+                    </ul>
+                    <button class="btn btn-secondary btn-block">Contact Sales</button>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h3>Frequently Asked Questions</h3>
+                </div>
+                <div class="card-body">
+                    <div class="faq-item">
+                        <div class="faq-question" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--color-border);">
+                            <h4 style="margin: 0; color: var(--color-text-primary);">Can I upgrade or downgrade my plan anytime?</h4>
+                            <i class="fas fa-chevron-down" style="color: var(--color-accent);"></i>
+                        </div>
+                        <div class="faq-answer" style="display: none; padding: 12px 0; color: var(--color-text-secondary);">
+                            <p>Yes! You can upgrade or downgrade your plan at any time. Changes will take effect at your next billing cycle.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--color-border);">
+                            <h4 style="margin: 0; color: var(--color-text-primary);">Is there a free trial available?</h4>
+                            <i class="fas fa-chevron-down" style="color: var(--color-accent);"></i>
+                        </div>
+                        <div class="faq-answer" style="display: none; padding: 12px 0; color: var(--color-text-secondary);">
+                            <p>Absolutely! Start with our Starter plan free for 14 days. No credit card required.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--color-border);">
+                            <h4 style="margin: 0; color: var(--color-text-primary);">What payment methods do you accept?</h4>
+                            <i class="fas fa-chevron-down" style="color: var(--color-accent);"></i>
+                        </div>
+                        <div class="faq-answer" style="display: none; padding: 12px 0; color: var(--color-text-secondary);">
+                            <p>We accept all major credit cards, PayPal, and wire transfers for Enterprise plans.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+                icon.style.transform = answer.style.display === 'block' ? 'rotate(180deg)' : 'rotate(0deg)';
+                icon.style.transition = 'transform 300ms ease';
+            });
+        });
+    </script>
+</body>
+</html>
