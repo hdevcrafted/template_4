@@ -4,76 +4,76 @@
 
 // ========== DOM INITIALIZATION ==========
 document.addEventListener('DOMContentLoaded', () => {
-    initSidebar();
-    initForms();
-    setActiveNavLink();
-    initNotifications();
-    initFavorites();
+  initSidebar();
+  initForms();
+  setActiveNavLink();
+  initNotifications();
+  initFavorites();
 });
 
 // ========== SIDEBAR FUNCTIONALITY ==========
 function initSidebar() {
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    const sidebar = document.querySelector('.sidebar');
+  const sidebarToggle = document.getElementById('sidebarToggle');
+  const sidebar = document.querySelector('.sidebar');
 
-    if (sidebarToggle) {
-        sidebarToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
-        });
+  if (sidebarToggle) {
+    sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+  }
+
+  // Close sidebar when clicking a nav link on mobile
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        sidebar.classList.remove('active');
+      }
+    });
+  });
+
+  // Close sidebar when clicking outside
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+      if (!sidebar.contains(e.target) && !sidebarToggle?.contains(e.target)) {
+        sidebar.classList.remove('active');
+      }
     }
-
-    // Close sidebar when clicking a nav link on mobile
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                sidebar.classList.remove('active');
-            }
-        });
-    });
-
-    // Close sidebar when clicking outside
-    document.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
-            if (!sidebar.contains(e.target) && !sidebarToggle?.contains(e.target)) {
-                sidebar.classList.remove('active');
-            }
-        }
-    });
+  });
 }
 
 // ========== NAVIGATION ACTIVE STATE ==========
 function setActiveNavLink() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-link');
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.nav-link');
 
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
-    });
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
 }
 
 // ========== NOTIFICATIONS SYSTEM ==========
 function initNotifications() {
-    const notificationBtn = document.getElementById('notificationBtn');
-    if (notificationBtn) {
-        notificationBtn.addEventListener('click', () => {
-            showNotification('New Update', 'You have 3 unread messages', 'info');
-        });
-    }
+  const notificationBtn = document.getElementById('notificationBtn');
+  if (notificationBtn) {
+    notificationBtn.addEventListener('click', () => {
+      showNotification('New Update', 'You have 3 unread messages', 'info');
+    });
+  }
 }
 
 function showNotification(title, message, type = 'info') {
-    // Create notification container if it doesn't exist
-    let container = document.getElementById('notification-container');
-    if (!container) {
-        container = document.createElement('div');
-        container.id = 'notification-container';
-        container.style.cssText = `
+  // Create notification container if it doesn't exist
+  let container = document.getElementById('notification-container');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'notification-container';
+    container.style.cssText = `
             position: fixed;
             top: 20px;
             right: 20px;
@@ -83,13 +83,13 @@ function showNotification(title, message, type = 'info') {
             gap: 10px;
             max-width: 400px;
         `;
-        document.body.appendChild(container);
-    }
+    document.body.appendChild(container);
+  }
 
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.style.cssText = `
+  // Create notification element
+  const notification = document.createElement('div');
+  notification.className = `notification notification-${type}`;
+  notification.style.cssText = `
         background-color: ${getNotificationColor(type)};
         color: white;
         padding: 16px 20px;
@@ -102,15 +102,15 @@ function showNotification(title, message, type = 'info') {
         gap: 12px;
     `;
 
-    const content = document.createElement('div');
-    content.innerHTML = `
+  const content = document.createElement('div');
+  content.innerHTML = `
         <strong>${title}</strong>
         <p style="margin: 4px 0 0 0; font-size: 13px; opacity: 0.9;">${message}</p>
     `;
 
-    const closeBtn = document.createElement('button');
-    closeBtn.innerHTML = '×';
-    closeBtn.style.cssText = `
+  const closeBtn = document.createElement('button');
+  closeBtn.innerHTML = '×';
+  closeBtn.style.cssText = `
         background: none;
         border: none;
         color: white;
@@ -124,109 +124,109 @@ function showNotification(title, message, type = 'info') {
         justify-content: center;
     `;
 
-    notification.appendChild(content);
-    notification.appendChild(closeBtn);
-    container.appendChild(notification);
+  notification.appendChild(content);
+  notification.appendChild(closeBtn);
+  container.appendChild(notification);
 
-    closeBtn.addEventListener('click', () => {
-        notification.style.animation = 'slideOut 300ms ease-out';
-        setTimeout(() => notification.remove(), 300);
-    });
+  closeBtn.addEventListener('click', () => {
+    notification.style.animation = 'slideOut 300ms ease-out';
+    setTimeout(() => notification.remove(), 300);
+  });
 
-    // Auto remove after 5 seconds
-    setTimeout(() => {
-        if (notification.parentNode) {
-            notification.style.animation = 'slideOut 300ms ease-out';
-            setTimeout(() => notification.remove(), 300);
-        }
-    }, 5000);
+  // Auto remove after 5 seconds
+  setTimeout(() => {
+    if (notification.parentNode) {
+      notification.style.animation = 'slideOut 300ms ease-out';
+      setTimeout(() => notification.remove(), 300);
+    }
+  }, 5000);
 }
 
 function getNotificationColor(type) {
-    const colors = {
-        success: '#4caf50',
-        error: '#ff6b6b',
-        warning: '#ffc107',
-        info: '#2196f3'
-    };
-    return colors[type] || colors.info;
+  const colors = {
+    success: '#4caf50',
+    error: '#ff6b6b',
+    warning: '#ffc107',
+    info: '#2196f3'
+  };
+  return colors[type] || colors.info;
 }
 
 // ========== FORM HANDLING ==========
 function initForms() {
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-        form.addEventListener('submit', handleFormSubmit);
-    });
+  const forms = document.querySelectorAll('form');
+  forms.forEach(form => {
+    form.addEventListener('submit', handleFormSubmit);
+  });
 }
 
 function handleFormSubmit(e) {
-    e.preventDefault();
-    const form = e.target;
+  e.preventDefault();
+  const form = e.target;
 
-    // Basic validation
-    if (validateForm(form)) {
-        showNotification('Success!', 'Form submitted successfully.', 'success');
-        form.reset();
-    }
+  // Basic validation
+  if (validateForm(form)) {
+    showNotification('Success!', 'Form submitted successfully.', 'success');
+    form.reset();
+  }
 }
 
 function validateForm(form) {
-    const inputs = form.querySelectorAll('.form-control[required]');
-    let isValid = true;
+  const inputs = form.querySelectorAll('.form-control[required]');
+  let isValid = true;
 
-    inputs.forEach(input => {
-        if (!input.value.trim()) {
-            showFieldError(input, 'This field is required');
-            isValid = false;
-        } else {
-            clearFieldError(input);
-        }
-    });
+  inputs.forEach(input => {
+    if (!input.value.trim()) {
+      showFieldError(input, 'This field is required');
+      isValid = false;
+    } else {
+      clearFieldError(input);
+    }
+  });
 
-    return isValid;
+  return isValid;
 }
 
 function showFieldError(input, message) {
-    input.classList.add('form-error');
-    let errorEl = input.nextElementSibling;
+  input.classList.add('form-error');
+  let errorEl = input.nextElementSibling;
 
-    if (!errorEl || !errorEl.classList.contains('form-error-message')) {
-        errorEl = document.createElement('div');
-        errorEl.className = 'form-error-message';
-        input.parentNode.insertBefore(errorEl, input.nextSibling);
-    }
+  if (!errorEl || !errorEl.classList.contains('form-error-message')) {
+    errorEl = document.createElement('div');
+    errorEl.className = 'form-error-message';
+    input.parentNode.insertBefore(errorEl, input.nextSibling);
+  }
 
-    errorEl.textContent = message;
+  errorEl.textContent = message;
 }
 
 function clearFieldError(input) {
-    input.classList.remove('form-error');
-    const errorEl = input.nextElementSibling;
+  input.classList.remove('form-error');
+  const errorEl = input.nextElementSibling;
 
-    if (errorEl && errorEl.classList.contains('form-error-message')) {
-        errorEl.remove();
-    }
+  if (errorEl && errorEl.classList.contains('form-error-message')) {
+    errorEl.remove();
+  }
 }
 
 // ========== FAVORITES SYSTEM ==========
 function initFavorites() {
-    const favoriteButtons = document.querySelectorAll('[data-favorite]');
-    favoriteButtons.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            toggleFavorite(this);
-        });
+  const favoriteButtons = document.querySelectorAll('[data-favorite]');
+  favoriteButtons.forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      toggleFavorite(this);
     });
+  });
 }
 
 function toggleFavorite(button) {
-    button.classList.toggle('favorited');
-    const isFavorited = button.classList.contains('favorited');
-    button.innerHTML = isFavorited ? '<i class="fas fa-heart"></i>' : '<i class="far fa-heart"></i>';
-    
-    const action = isFavorited ? 'added to' : 'removed from';
-    showNotification('Favorite', `Item ${action} your favorites`, 'success');
+  button.classList.toggle('favorited');
+  const isFavorited = button.classList.contains('favorited');
+  button.innerHTML = isFavorited ? '<i class="fas fa-heart"></i>' : '<i class="far fa-heart"></i>';
+
+  const action = isFavorited ? 'added to' : 'removed from';
+  showNotification('Favorite', `Item ${action} your favorites`, 'success');
 }
 
 // ========== UTILITY FUNCTIONS ==========
@@ -235,176 +235,176 @@ function toggleFavorite(button) {
  * Add item to a list (used in friends, projects, etc.)
  */
 function addItemToList(listSelector, itemHTML) {
-    const list = document.querySelector(listSelector);
-    if (!list) return;
+  const list = document.querySelector(listSelector);
+  if (!list) return;
 
-    const tbody = list.querySelector('tbody');
-    if (tbody) {
-        const row = document.createElement('tr');
-        row.innerHTML = itemHTML;
-        tbody.appendChild(row);
-        animateNewItem(row);
-    }
+  const tbody = list.querySelector('tbody');
+  if (tbody) {
+    const row = document.createElement('tr');
+    row.innerHTML = itemHTML;
+    tbody.appendChild(row);
+    animateNewItem(row);
+  }
 }
 
 /**
  * Remove item from a list
  */
 function removeItemFromList(button) {
-    const row = button.closest('tr') || button.closest('.item-card') || button.closest('.project-card') || button.closest('.course-card');
-    if (row) {
-        row.style.animation = 'slideOut 300ms ease-out';
-        setTimeout(() => {
-            row.remove();
-            showNotification('Deleted', 'Item removed successfully', 'success');
-        }, 300);
-    }
+  const row = button.closest('tr') || button.closest('.item-card') || button.closest('.project-card') || button.closest('.course-card');
+  if (row) {
+    row.style.animation = 'slideOut 300ms ease-out';
+    setTimeout(() => {
+      row.remove();
+      showNotification('Deleted', 'Item removed successfully', 'success');
+    }, 300);
+  }
 }
 
 /**
  * Animate new item appearance
  */
 function animateNewItem(element) {
-    element.style.animation = 'slideIn 300ms ease-out';
+  element.style.animation = 'slideIn 300ms ease-out';
 }
 
 /**
  * Format date
  */
 function formatDate(date) {
-    const options = { year: 'numeric', month: 'short', day: 'numeric' };
-    return new Date(date).toLocaleDateString('en-US', options);
+  const options = { year: 'numeric', month: 'short', day: 'numeric' };
+  return new Date(date).toLocaleDateString('en-US', options);
 }
 
 /**
  * Get initials from name
  */
 function getInitials(name) {
-    return name
-        .split(' ')
-        .map(part => part[0])
-        .join('')
-        .toUpperCase();
+  return name
+    .split(' ')
+    .map(part => part[0])
+    .join('')
+    .toUpperCase();
 }
 
 /**
  * Copy to clipboard
  */
 function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(() => {
-        showNotification('Copied', 'Text copied to clipboard', 'success');
-    }).catch(() => {
-        showNotification('Error', 'Failed to copy to clipboard', 'error');
-    });
+  navigator.clipboard.writeText(text).then(() => {
+    showNotification('Copied', 'Text copied to clipboard', 'success');
+  }).catch(() => {
+    showNotification('Error', 'Failed to copy to clipboard', 'error');
+  });
 }
 
 /**
  * Debounce function for optimized event listeners
  */
 function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
     };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
 }
 
 /**
  * Throttle function for performance
  */
 function throttle(func, limit) {
-    let inThrottle;
-    return function(...args) {
-        if (!inThrottle) {
-            func.apply(this, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
+  let inThrottle;
+  return function (...args) {
+    if (!inThrottle) {
+      func.apply(this, args);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
+    }
+  };
 }
 
 /**
  * Search/Filter functionality
  */
 function setupSearch(inputSelector, tableSelector) {
-    const searchInput = document.querySelector(inputSelector);
-    const table = document.querySelector(tableSelector);
-    
-    if (!searchInput || !table) return;
+  const searchInput = document.querySelector(inputSelector);
+  const table = document.querySelector(tableSelector);
 
-    searchInput.addEventListener('keyup', debounce(function() {
-        const searchTerm = this.value.toLowerCase();
-        const rows = table.querySelectorAll('tbody tr');
-        
-        rows.forEach(row => {
-            const text = row.textContent.toLowerCase();
-            row.style.display = text.includes(searchTerm) ? '' : 'none';
-        });
-    }, 300));
+  if (!searchInput || !table) return;
+
+  searchInput.addEventListener('keyup', debounce(function () {
+    const searchTerm = this.value.toLowerCase();
+    const rows = table.querySelectorAll('tbody tr');
+
+    rows.forEach(row => {
+      const text = row.textContent.toLowerCase();
+      row.style.display = text.includes(searchTerm) ? '' : 'none';
+    });
+  }, 300));
 }
 
 /**
  * Sort table by column
  */
 function setupTableSort(tableSelector) {
-    const table = document.querySelector(tableSelector);
-    if (!table) return;
+  const table = document.querySelector(tableSelector);
+  if (!table) return;
 
-    const headers = table.querySelectorAll('th');
-    headers.forEach((header, columnIndex) => {
-        header.style.cursor = 'pointer';
-        header.addEventListener('click', () => {
-            const tbody = table.querySelector('tbody');
-            const rows = Array.from(tbody.querySelectorAll('tr'));
-            
-            rows.sort((a, b) => {
-                const aValue = a.cells[columnIndex].textContent.trim();
-                const bValue = b.cells[columnIndex].textContent.trim();
-                
-                if (!isNaN(aValue) && !isNaN(bValue)) {
-                    return aValue - bValue;
-                }
-                return aValue.localeCompare(bValue);
-            });
-            
-            rows.forEach(row => tbody.appendChild(row));
-        });
+  const headers = table.querySelectorAll('th');
+  headers.forEach((header, columnIndex) => {
+    header.style.cursor = 'pointer';
+    header.addEventListener('click', () => {
+      const tbody = table.querySelector('tbody');
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+
+      rows.sort((a, b) => {
+        const aValue = a.cells[columnIndex].textContent.trim();
+        const bValue = b.cells[columnIndex].textContent.trim();
+
+        if (!isNaN(aValue) && !isNaN(bValue)) {
+          return aValue - bValue;
+        }
+        return aValue.localeCompare(bValue);
+      });
+
+      rows.forEach(row => tbody.appendChild(row));
     });
+  });
 }
 
 /**
  * Export table to CSV
  */
 function exportTableToCSV(tableSelector, filename = 'export.csv') {
-    const table = document.querySelector(tableSelector);
-    if (!table) return;
+  const table = document.querySelector(tableSelector);
+  if (!table) return;
 
-    let csv = [];
-    const rows = table.querySelectorAll('tr');
-    
-    rows.forEach(row => {
-        let csvRow = [];
-        row.querySelectorAll('td, th').forEach(cell => {
-            csvRow.push('"' + cell.textContent.trim() + '"');
-        });
-        csv.push(csvRow.join(','));
+  let csv = [];
+  const rows = table.querySelectorAll('tr');
+
+  rows.forEach(row => {
+    let csvRow = [];
+    row.querySelectorAll('td, th').forEach(cell => {
+      csvRow.push('"' + cell.textContent.trim() + '"');
     });
-    
-    downloadCSV(csv.join('\n'), filename);
+    csv.push(csvRow.join(','));
+  });
+
+  downloadCSV(csv.join('\n'), filename);
 }
 
 function downloadCSV(csv, filename) {
-    const csvFile = new Blob([csv], { type: 'text/csv' });
-    const downloadLink = document.createElement('a');
-    downloadLink.href = URL.createObjectURL(csvFile);
-    downloadLink.download = filename;
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
+  const csvFile = new Blob([csv], { type: 'text/csv' });
+  const downloadLink = document.createElement('a');
+  downloadLink.href = URL.createObjectURL(csvFile);
+  downloadLink.download = filename;
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
 }
 
 // ========== ANIMATIONS & STYLES ==========
