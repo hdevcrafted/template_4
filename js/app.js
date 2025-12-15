@@ -73,56 +73,24 @@ function showNotification(title, message, type = 'info') {
   if (!container) {
     container = document.createElement('div');
     container.id = 'notification-container';
-    container.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-width: 400px;
-        `;
+    container.className = 'notification-container';
     document.body.appendChild(container);
   }
 
   // Create notification element
   const notification = document.createElement('div');
   notification.className = `notification notification-${type}`;
-  notification.style.cssText = `
-        background-color: ${getNotificationColor(type)};
-        color: white;
-        padding: 16px 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        animation: slideIn 300ms ease-out;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 12px;
-    `;
 
   const content = document.createElement('div');
+  content.className = 'notification-content';
   content.innerHTML = `
         <strong>${title}</strong>
-        <p style="margin: 4px 0 0 0; font-size: 13px; opacity: 0.9;">${message}</p>
+        <p class="notification-message">${message}</p>
     `;
 
   const closeBtn = document.createElement('button');
+  closeBtn.className = 'notification-close';
   closeBtn.innerHTML = '×';
-  closeBtn.style.cssText = `
-        background: none;
-        border: none;
-        color: white;
-        font-size: 24px;
-        cursor: pointer;
-        padding: 0;
-        width: 24px;
-        height: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    `;
 
   notification.appendChild(content);
   notification.appendChild(closeBtn);

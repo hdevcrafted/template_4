@@ -103,11 +103,11 @@
     <!-- Page Content -->
     <section class="content-area">
       <!-- Plans Section -->
-      <div class="pricing-toggle mb-4" style="text-align: center;">
-        <label style="color: var(--color-text-secondary); font-weight: var(--font-weight-medium);">
+      <div class="pricing-toggle mb-4">
+        <label>
           <input type="radio" name="billing" value="monthly" checked> Monthly
         </label>
-        <label style="margin-left: 30px; color: var(--color-text-secondary); font-weight: var(--font-weight-medium);">
+        <label>
           <input type="radio" name="billing" value="yearly"> Yearly (Save 20%)
         </label>
       </div>
@@ -244,35 +244,32 @@
         </div>
         <div class="card-body">
           <div class="faq-item">
-            <div class="faq-question"
-              style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--color-border);">
-              <h4 style="margin: 0; color: var(--color-text-primary);">Can I upgrade or downgrade my plan anytime?</h4>
-              <i class="fas fa-chevron-down" style="color: var(--color-accent);"></i>
+            <div class="faq-question">
+              <h4>Can I upgrade or downgrade my plan anytime?</h4>
+              <i class="fas fa-chevron-down"></i>
             </div>
-            <div class="faq-answer" style="display: none; padding: 12px 0; color: var(--color-text-secondary);">
+            <div class="faq-answer">
               <p>Yes! You can upgrade or downgrade your plan at any time. Changes will take effect at your next billing
                 cycle.</p>
             </div>
           </div>
 
           <div class="faq-item">
-            <div class="faq-question"
-              style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--color-border);">
-              <h4 style="margin: 0; color: var(--color-text-primary);">Is there a free trial available?</h4>
-              <i class="fas fa-chevron-down" style="color: var(--color-accent);"></i>
+            <div class="faq-question">
+              <h4>Is there a free trial available?</h4>
+              <i class="fas fa-chevron-down"></i>
             </div>
-            <div class="faq-answer" style="display: none; padding: 12px 0; color: var(--color-text-secondary);">
+            <div class="faq-answer">
               <p>Absolutely! Start with our Starter plan free for 14 days. No credit card required.</p>
             </div>
           </div>
 
           <div class="faq-item">
-            <div class="faq-question"
-              style="cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--color-border);">
-              <h4 style="margin: 0; color: var(--color-text-primary);">What payment methods do you accept?</h4>
-              <i class="fas fa-chevron-down" style="color: var(--color-accent);"></i>
+            <div class="faq-question">
+              <h4>What payment methods do you accept?</h4>
+              <i class="fas fa-chevron-down"></i>
             </div>
-            <div class="faq-answer" style="display: none; padding: 12px 0; color: var(--color-text-secondary);">
+            <div class="faq-answer">
               <p>We accept all major credit cards, PayPal, and wire transfers for Enterprise plans.</p>
             </div>
           </div>
@@ -288,9 +285,8 @@
       question.addEventListener('click', function () {
         const answer = this.nextElementSibling;
         const icon = this.querySelector('i');
-        answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
-        icon.style.transform = answer.style.display === 'block' ? 'rotate(180deg)' : 'rotate(0deg)';
-        icon.style.transition = 'transform 300ms ease';
+        answer.classList.toggle('show');
+        icon.style.transform = answer.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
       });
     });
   </script>

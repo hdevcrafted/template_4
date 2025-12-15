@@ -103,8 +103,7 @@
     <!-- Page Content -->
     <section class="content-area">
       <!-- Settings Tabs Navigation -->
-      <div class="settings-nav mb-4"
-        style="display: flex; gap: 20px; border-bottom: 1px solid var(--color-border); padding-bottom: 20px;">
+      <div class="settings-nav">
         <button class="settings-tab active" data-tab="account">
           <i class="fas fa-user"></i> Account
         </button>
@@ -189,40 +188,40 @@
       </div>
 
       <!-- Notifications Settings -->
-      <div class="settings-panel" id="notifications-panel" style="display: none;">
+      <div class="settings-panel hidden" id="notifications-panel">
         <div class="card">
           <div class="card-header">
             <h3>Notification Preferences</h3>
           </div>
           <div class="card-body">
             <div class="notification-setting">
-              <div class="flex-between mb-3 pb-3" style="border-bottom: 1px solid var(--color-border);">
+              <div class="settings-item">
                 <div>
-                  <h4 style="margin: 0 0 4px 0; color: var(--color-text-primary);">Email Notifications</h4>
+                  <h4 class="settings-item-title">Email Notifications</h4>
                   <p class="text-tertiary text-sm">Receive emails about your account activity</p>
                 </div>
                 <input type="checkbox" class="form-checkbox" checked>
               </div>
 
-              <div class="flex-between mb-3 pb-3" style="border-bottom: 1px solid var(--color-border);">
+              <div class="settings-item">
                 <div>
-                  <h4 style="margin: 0 0 4px 0; color: var(--color-text-primary);">Friend Requests</h4>
+                  <h4 class="settings-item-title">Friend Requests</h4>
                   <p class="text-tertiary text-sm">Get notified when someone sends a friend request</p>
                 </div>
                 <input type="checkbox" class="form-checkbox" checked>
               </div>
 
-              <div class="flex-between mb-3 pb-3" style="border-bottom: 1px solid var(--color-border);">
+              <div class="settings-item">
                 <div>
-                  <h4 style="margin: 0 0 4px 0; color: var(--color-text-primary);">Course Updates</h4>
+                  <h4 class="settings-item-title">Course Updates</h4>
                   <p class="text-tertiary text-sm">Notifications about new courses and materials</p>
                 </div>
                 <input type="checkbox" class="form-checkbox" checked>
               </div>
 
-              <div class="flex-between mb-3 pb-3" style="border-bottom: 1px solid var(--color-border);">
+              <div class="settings-item">
                 <div>
-                  <h4 style="margin: 0 0 4px 0; color: var(--color-text-primary);">Project Collaborators</h4>
+                  <h4 class="settings-item-title">Project Collaborators</h4>
                   <p class="text-tertiary text-sm">Updates from your project collaborators</p>
                 </div>
                 <input type="checkbox" class="form-checkbox">
@@ -230,7 +229,7 @@
 
               <div class="flex-between">
                 <div>
-                  <h4 style="margin: 0 0 4px 0; color: var(--color-text-primary);">Marketing Emails</h4>
+                  <h4 class="settings-item-title">Marketing Emails</h4>
                   <p class="text-tertiary text-sm">Receive updates about new features and offers</p>
                 </div>
                 <input type="checkbox" class="form-checkbox">
@@ -242,28 +241,28 @@
       </div>
 
       <!-- Privacy Settings -->
-      <div class="settings-panel" id="privacy-panel" style="display: none;">
+      <div class="settings-panel hidden" id="privacy-panel">
         <div class="card">
           <div class="card-header">
             <h3>Privacy Controls</h3>
           </div>
           <div class="card-body">
             <div class="privacy-setting">
-              <div class="flex-between mb-3 pb-3" style="border-bottom: 1px solid var(--color-border);">
+              <div class="settings-item">
                 <div>
-                  <h4 style="margin: 0 0 4px 0; color: var(--color-text-primary);">Profile Visibility</h4>
+                  <h4 class="settings-item-title">Profile Visibility</h4>
                   <p class="text-tertiary text-sm">Allow others to view your profile</p>
                 </div>
-                <select class="form-control" style="width: auto;">
+                <select class="form-control form-control-auto">
                   <option>Public</option>
                   <option>Friends Only</option>
                   <option>Private</option>
                 </select>
               </div>
 
-              <div class="flex-between mb-3 pb-3" style="border-bottom: 1px solid var(--color-border);">
+              <div class="settings-item">
                 <div>
-                  <h4 style="margin: 0 0 4px 0; color: var(--color-text-primary);">Show Online Status</h4>
+                  <h4 class="settings-item-title">Show Online Status</h4>
                   <p class="text-tertiary text-sm">Let others know when you're online</p>
                 </div>
                 <input type="checkbox" class="form-checkbox" checked>
@@ -271,7 +270,7 @@
 
               <div class="flex-between">
                 <div>
-                  <h4 style="margin: 0 0 4px 0; color: var(--color-text-primary);">Allow Search Indexing</h4>
+                  <h4 class="settings-item-title">Allow Search Indexing</h4>
                   <p class="text-tertiary text-sm">Allow search engines to index your profile</p>
                 </div>
                 <input type="checkbox" class="form-checkbox" checked>
@@ -282,9 +281,9 @@
         </div>
 
         <!-- Danger Zone -->
-        <div class="card mt-4" style="border-color: var(--color-error); border-width: 2px;">
-          <div class="card-header" style="background-color: rgba(255, 107, 107, 0.1);">
-            <h3 style="color: var(--color-error);">Danger Zone</h3>
+        <div class="card mt-4 danger-zone">
+          <div class="card-header">
+            <h3>Danger Zone</h3>
           </div>
           <div class="card-body">
             <p>Once you delete your account, there is no going back. Please be certain.</p>
@@ -294,7 +293,7 @@
       </div>
 
       <!-- Billing Settings -->
-      <div class="settings-panel" id="billing-panel" style="display: none;">
+      <div class="settings-panel hidden" id="billing-panel">
         <div class="grid grid-2 gap-4">
           <!-- Current Plan -->
           <div class="card">
@@ -304,15 +303,15 @@
             <div class="card-body">
               <div class="mb-4">
                 <p class="text-sm text-tertiary">Plan Type</p>
-                <h3 style="color: var(--color-accent); margin: 8px 0 0 0;">Professional Plan</h3>
+                <h3 class="card-title">Professional Plan</h3>
               </div>
               <div class="mb-4">
                 <p class="text-sm text-tertiary">Billing Cycle</p>
-                <p style="margin: 8px 0 0 0; color: var(--color-text-primary);">Monthly - $29/month</p>
+                <p class="card-subtitle">Monthly - $29/month</p>
               </div>
               <div class="mb-4">
                 <p class="text-sm text-tertiary">Next Billing Date</p>
-                <p style="margin: 8px 0 0 0; color: var(--color-text-primary);">December 15, 2025</p>
+                <p class="card-subtitle">December 15, 2025</p>
               </div>
               <button class="btn btn-secondary">Change Plan</button>
             </div>
@@ -324,13 +323,13 @@
               <h3>Billing Method</h3>
             </div>
             <div class="card-body">
-              <div class="mb-4" style="padding: 12px; background-color: var(--color-bg-light); border-radius: 6px;">
-                <p class="text-sm" style="margin: 0 0 8px 0;">
-                  <i class="fas fa-credit-card" style="margin-right: 8px; color: var(--color-accent);"></i>
+              <div class="billing-info-box">
+                <p class="billing-info-label">
+                  <i class="fas fa-credit-card billing-info-icon"></i>
                   <strong>Visa</strong>
                 </p>
-                <p class="text-tertiary text-sm" style="margin: 0;">•••• •••• •••• 4242</p>
-                <p class="text-tertiary text-sm" style="margin: 4px 0 0 0;">Expires 12/26</p>
+                <p class="billing-info-detail">•••• •••• •••• 4242</p>
+                <p class="billing-info-detail">Expires 12/26</p>
               </div>
               <button class="btn btn-secondary btn-sm">Update Payment Method</button>
             </div>
@@ -388,7 +387,7 @@
 
         // Hide all panels
         document.querySelectorAll('.settings-panel').forEach(panel => {
-          panel.style.display = 'none';
+          panel.classList.add('hidden');
         });
 
         // Remove active class from all tabs
@@ -397,7 +396,7 @@
         });
 
         // Show selected panel and mark tab as active
-        document.getElementById(tabName + '-panel').style.display = 'block';
+        document.getElementById(tabName + '-panel').classList.remove('hidden');
         this.classList.add('active');
       });
     });
