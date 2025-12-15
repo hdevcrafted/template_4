@@ -864,6 +864,15 @@ body {
     justify-content: flex-end;
   }
 
+  .nav-link {
+    justify-content: flex-start;
+    padding: var(--spacing-lg) var(--spacing-xl);
+  }
+
+  .nav-link span {
+    display: flex;
+  }
+
   .content-area {
     padding: var(--spacing-xl);
   }
