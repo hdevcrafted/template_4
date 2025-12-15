@@ -13,11 +13,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ========== SIDEBAR FUNCTIONALITY ==========
 function initSidebar() {
+  // Desktop toggle (if it exists)
   const sidebarToggle = document.getElementById('sidebarToggle');
+
+  // Mobile toggle
+  const mobileToggle = document.getElementById('mobileToggle');
   const sidebar = document.querySelector('.sidebar');
 
   if (sidebarToggle) {
     sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+  }
+
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', () => {
       sidebar.classList.toggle('active');
     });
   }
@@ -35,7 +45,7 @@ function initSidebar() {
   // Close sidebar when clicking outside
   document.addEventListener('click', (e) => {
     if (window.innerWidth <= 768) {
-      if (!sidebar.contains(e.target) && !sidebarToggle?.contains(e.target)) {
+      if (!sidebar.contains(e.target) && !sidebarToggle?.contains(e.target) && !mobileToggle?.contains(e.target)) {
         sidebar.classList.remove('active');
       }
     }

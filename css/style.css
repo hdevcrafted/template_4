@@ -94,6 +94,11 @@ body {
   min-height: 100vh;
 }
 
+/* Mobile Header - Hidden on Desktop */
+.mobile-header {
+  display: none;
+}
+
 /* Sidebar */
 .sidebar {
   background-color: var(--color-primary);
@@ -757,26 +762,93 @@ body {
 }
 
 @media (max-width: 768px) {
-  .sidebar-toggle {
+
+  /* Show Mobile Header */
+  .mobile-header {
     display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background-color: var(--color-primary);
+    border-bottom: 1px solid var(--color-border);
+    z-index: 1000;
+  }
+
+  .mobile-header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 var(--spacing-lg);
+  }
+
+  .mobile-toggle {
+    background: none;
+    border: none;
+    color: var(--color-text-primary);
+    font-size: 20px;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--transition-base);
+  }
+
+  .mobile-toggle:hover {
+    color: var(--color-accent);
+  }
+
+  .mobile-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-accent);
+    margin: 0;
+    /* flex: 1; */
+  }
+
+  .mobile-logo i {
+    font-size: var(--font-size-xl);
+    justify-self: flex-start;
+  }
+
+  .mobile-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+  }
+
+  /* Adjust Body Layout */
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    padding-top: 70px;
+  }
+
+  /* Hide Desktop Toggle */
+  .sidebar-toggle {
+    display: none;
   }
 
   .sidebar {
     width: 0;
     overflow: hidden;
     box-shadow: var(--box-shadow-lg);
+    grid-row: 1 / -1;
   }
 
   .sidebar.active {
     width: var(--sidebar-width);
   }
 
-  body {
-    grid-template-columns: 1fr;
-  }
-
   .main-content {
     grid-column: 1;
+    grid-row: 2;
   }
 
   .page-header {
