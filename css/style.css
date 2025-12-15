@@ -1496,6 +1496,49 @@ body {
   margin: 0 var(--spacing-2xl) 0 0;
 }
 
+/* Billing Toggle Container */
+.billing-toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2xl);
+}
+
+.billing-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  transition: color var(--transition-base);
+  user-select: none;
+}
+
+.billing-toggle-label:hover {
+  color: var(--color-text-primary);
+}
+
+.billing-toggle-label input[type="radio"] {
+  cursor: pointer;
+  accent-color: var(--color-accent);
+}
+
+.billing-toggle-label input[type="radio"]:checked + span {
+  color: var(--color-accent);
+}
+
+.savings-badge {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  padding: 2px 8px;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  margin-left: 4px;
+}
+
 /* FAQ Section */
 .faq-question {
   cursor: pointer;

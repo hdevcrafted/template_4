@@ -117,26 +117,28 @@
 
     <!-- Page Content -->
     <section class="content-area">
-      <!-- Plans Section -->
-      <div class="pricing-toggle mb-4">
-        <label>
-          <input type="radio" name="billing" value="monthly" checked> Monthly
+      <!-- Billing Toggle -->
+      <div class="billing-toggle-container mb-4">
+        <label class="billing-toggle-label">
+          <input type="radio" name="billing" value="monthly" checked id="billingMonthly">
+          <span>Monthly</span>
         </label>
-        <label>
-          <input type="radio" name="billing" value="yearly"> Yearly (Save 20%)
+        <label class="billing-toggle-label">
+          <input type="radio" name="billing" value="yearly" id="billingYearly">
+          <span>Yearly <span class="savings-badge">Save 20%</span></span>
         </label>
       </div>
 
       <div class="grid grid-3">
         <!-- Starter Plan -->
-        <div class="pricing-card">
+        <div class="pricing-card" data-plan="starter">
           <div class="pricing-header">
             <h3>Starter</h3>
             <p class="text-tertiary">Perfect to get started</p>
           </div>
           <div class="pricing-price">
             <span class="price-currency">$</span>
-            <span class="price-amount">9</span>
+            <span class="price-amount" data-monthly="9" data-yearly="86">9</span>
             <span class="price-period">/month</span>
           </div>
           <ul class="pricing-features">
@@ -169,7 +171,7 @@
         </div>
 
         <!-- Professional Plan -->
-        <div class="pricing-card featured">
+        <div class="pricing-card featured" data-plan="professional">
           <div class="pricing-badge">
             <i class="fas fa-star"></i> Most Popular
           </div>
@@ -179,7 +181,7 @@
           </div>
           <div class="pricing-price">
             <span class="price-currency">$</span>
-            <span class="price-amount">29</span>
+            <span class="price-amount" data-monthly="29" data-yearly="278">29</span>
             <span class="price-period">/month</span>
           </div>
           <ul class="pricing-features">
@@ -212,14 +214,14 @@
         </div>
 
         <!-- Enterprise Plan -->
-        <div class="pricing-card">
+        <div class="pricing-card" data-plan="enterprise">
           <div class="pricing-header">
             <h3>Enterprise</h3>
             <p class="text-tertiary">For large teams</p>
           </div>
           <div class="pricing-price">
             <span class="price-currency">$</span>
-            <span class="price-amount">99</span>
+            <span class="price-amount" data-monthly="99" data-yearly="950">99</span>
             <span class="price-period">/month</span>
           </div>
           <ul class="pricing-features">
@@ -295,6 +297,25 @@
 
   <script src="js/app.js"></script>
   <script>
+    // Billing Toggle - Update prices
+    const billingRadios = document.querySelectorAll('input[name="billing"]');
+    billingRadios.forEach(radio => {
+      radio.addEventListener('change', function () {
+        const isYearly = this.value === 'yearly';
+        document.querySelectorAll('.price-amount').forEach(priceElement => {
+          const monthlyPrice = priceElement.getAttribute('data-monthly');
+          const yearlyPrice = priceElement.getAttribute('data-yearly');
+          priceElement.textContent = isYearly ? yearlyPrice : monthlyPrice;
+        });
+        
+        // Update period label
+        const periodLabels = document.querySelectorAll('.price-period');
+        periodLabels.forEach(label => {
+          label.textContent = isYearly ? '/year' : '/month';
+        });
+      });
+    });
+
     // FAQ Toggle
     document.querySelectorAll('.faq-question').forEach(question => {
       question.addEventListener('click', function () {
