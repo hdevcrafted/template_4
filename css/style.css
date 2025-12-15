@@ -684,12 +684,6 @@ body {
   gap: var(--spacing-lg);
 }
 
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* Loading Spinner */
 
 @keyframes spin {
@@ -1277,6 +1271,13 @@ body {
 }
 
 /* Friends Page */
+
+.friend-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
 .status-badge {
   display: inline-flex;
   align-items: center;
@@ -1295,12 +1296,6 @@ body {
 
 .status-badge.offline {
   color: var(--color-text-tertiary);
-}
-
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* ========== COMPONENT-SPECIFIC CLASSES ========== */
