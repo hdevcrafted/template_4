@@ -2,6 +2,10 @@
    CRAFTERS - JavaScript Application Logic
    ======================================== */
 
+// ========== MODULE IMPORTS ==========
+import { initPricing, initFAQ } from './modules/pricing.js';
+import { initSettingsTabs } from './modules/settings-tabs.js';
+
 // ========== DOM INITIALIZATION ==========
 document.addEventListener('DOMContentLoaded', () => {
   initSidebar();
@@ -9,6 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
   setActiveNavLink();
   initNotifications();
   initFavorites();
+
+  // Initialize page-specific modules
+  if (document.querySelector('input[name="billing"]')) {
+    initPricing();
+  }
+  if (document.querySelector('.faq-question')) {
+    initFAQ();
+  }
+  if (document.querySelector('.settings-tab')) {
+    initSettingsTabs();
+  }
 });
 
 // ========== SIDEBAR FUNCTIONALITY ==========
